@@ -5,6 +5,7 @@ const ratingSelect = document.querySelector('.rating-select')
 const selectButton = document.querySelector('.select-button')
 const search = document.getElementById('search')
 const searchButton = document.getElementById('search-button')
+let result = 0
 const movies = [
 {
     name: 'The Power of Dog',
@@ -890,6 +891,9 @@ const movies = [
     },
 
 ]
+
+
+
 searchButton.addEventListener('click', () => {
     // console.log( movies[0].name.toLowerCase())
    
@@ -964,4888 +968,717 @@ searchButton.addEventListener('click', () => {
 const selectOption = () => {
     // DRAMA
    if (genreSelect[genreSelect.selectedIndex].value === 'drama' && yearSelect[yearSelect.selectedIndex].value === '2020s' && ratingSelect[ratingSelect.selectedIndex].value === '8.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('drama') && movie.year >= 2020 && movie.year < 2030 && movie.ImdbRating >= 8
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     } 
     if (genreSelect[genreSelect.selectedIndex].value === 'drama' && yearSelect[yearSelect.selectedIndex].value === '2010s' && ratingSelect[ratingSelect.selectedIndex].value === '8.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('drama') && movie.year >= 2010 && movie.year < 2020 && movie.ImdbRating >= 8
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'drama' && yearSelect[yearSelect.selectedIndex].value === '2000s' && ratingSelect[ratingSelect.selectedIndex].value === '8.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('drama') && movie.year >= 2000 && movie.year < 2010 && movie.ImdbRating >= 8
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'drama' && yearSelect[yearSelect.selectedIndex].value === '1990s' && ratingSelect[ratingSelect.selectedIndex].value === '8.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('drama')  && movie.year < 2000 && movie.ImdbRating >= 8
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'drama' && yearSelect[yearSelect.selectedIndex].value === '2020s' && ratingSelect[ratingSelect.selectedIndex].value === '7.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('drama') && movie.year >= 2020 && movie.year < 2030 && movie.ImdbRating >= 7
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'drama' && yearSelect[yearSelect.selectedIndex].value === '2010s' && ratingSelect[ratingSelect.selectedIndex].value === '7.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('drama') && movie.year >= 2010 && movie.year < 2020 && movie.ImdbRating >= 7
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'drama' && yearSelect[yearSelect.selectedIndex].value === '2000s' && ratingSelect[ratingSelect.selectedIndex].value === '7.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('drama') && movie.year >= 2000 && movie.year < 2010 && movie.ImdbRating >= 7
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'drama' && yearSelect[yearSelect.selectedIndex].value === '1990s' && ratingSelect[ratingSelect.selectedIndex].value === '7.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('drama') && movie.year >= 1990 && movie.year < 2000 && movie.ImdbRating >= 7
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'drama' && yearSelect[yearSelect.selectedIndex].value === '2020s' && ratingSelect[ratingSelect.selectedIndex].value === '6.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('drama') && movie.year >= 2020 && movie.year < 2030 && movie.ImdbRating >= 6
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'drama' && yearSelect[yearSelect.selectedIndex].value === '2010s' && ratingSelect[ratingSelect.selectedIndex].value === '6.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('drama') && movie.year >= 2010 && movie.year < 2020 && movie.ImdbRating >= 6
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'drama' && yearSelect[yearSelect.selectedIndex].value === '2000s' && ratingSelect[ratingSelect.selectedIndex].value === '6.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('drama') && movie.year >= 2000 && movie.year < 2010 && movie.ImdbRating >= 6
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'drama' && yearSelect[yearSelect.selectedIndex].value === '1990s' && ratingSelect[ratingSelect.selectedIndex].value === '6.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('drama') && movie.year >= 1990 && movie.year < 2000 && movie.ImdbRating >= 6
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     // HORROR
     if (genreSelect[genreSelect.selectedIndex].value === 'horror' && yearSelect[yearSelect.selectedIndex].value === '2020s' && ratingSelect[ratingSelect.selectedIndex].value === '8.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('horror') && movie.year >= 2020 && movie.year < 2030 && movie.ImdbRating >= 8
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     } 
     if (genreSelect[genreSelect.selectedIndex].value === 'horror' && yearSelect[yearSelect.selectedIndex].value === '2010s' && ratingSelect[ratingSelect.selectedIndex].value === '8.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('horror') && movie.year >= 2010 && movie.year < 2020 && movie.ImdbRating >= 8
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'horror' && yearSelect[yearSelect.selectedIndex].value === '2000s' && ratingSelect[ratingSelect.selectedIndex].value === '8.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('horror') && movie.year >= 2000 && movie.year < 2010 && movie.ImdbRating >= 8
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'horror' && yearSelect[yearSelect.selectedIndex].value === '1990s' && ratingSelect[ratingSelect.selectedIndex].value === '8.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('horror')  && movie.year < 2000 && movie.ImdbRating >= 8
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'horror' && yearSelect[yearSelect.selectedIndex].value === '2020s' && ratingSelect[ratingSelect.selectedIndex].value === '7.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('horror') && movie.year >= 2020 && movie.year < 2030 && movie.ImdbRating >= 7
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'horror' && yearSelect[yearSelect.selectedIndex].value === '2010s' && ratingSelect[ratingSelect.selectedIndex].value === '7.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('horror') && movie.year >= 2010 && movie.year < 2020 && movie.ImdbRating >= 7
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'horror' && yearSelect[yearSelect.selectedIndex].value === '2000s' && ratingSelect[ratingSelect.selectedIndex].value === '7.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('horror') && movie.year >= 2000 && movie.year < 2010 && movie.ImdbRating >= 7
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'horror' && yearSelect[yearSelect.selectedIndex].value === '1990s' && ratingSelect[ratingSelect.selectedIndex].value === '7.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('horror') && movie.year >= 1990 && movie.year < 2000 && movie.ImdbRating >= 7
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'horror' && yearSelect[yearSelect.selectedIndex].value === '2020s' && ratingSelect[ratingSelect.selectedIndex].value === '6.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('horror') && movie.year >= 2020 && movie.year < 2030 && movie.ImdbRating >= 6
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'horror' && yearSelect[yearSelect.selectedIndex].value === '2010s' && ratingSelect[ratingSelect.selectedIndex].value === '6.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('horror') && movie.year >= 2010 && movie.year < 2020 && movie.ImdbRating >= 6
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'horror' && yearSelect[yearSelect.selectedIndex].value === '2000s' && ratingSelect[ratingSelect.selectedIndex].value === '6.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('horror') && movie.year >= 2000 && movie.year < 2010 && movie.ImdbRating >= 6
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'horror' && yearSelect[yearSelect.selectedIndex].value === '1990s' && ratingSelect[ratingSelect.selectedIndex].value === '6.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('horror') && movie.year >= 1990 && movie.year < 2000 && movie.ImdbRating >= 6
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     // MYSTERY
     if (genreSelect[genreSelect.selectedIndex].value === 'mystery' && yearSelect[yearSelect.selectedIndex].value === '2020s' && ratingSelect[ratingSelect.selectedIndex].value === '8.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('mystery') && movie.year >= 2020 && movie.year < 2030 && movie.ImdbRating >= 8
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     } 
     if (genreSelect[genreSelect.selectedIndex].value === 'mystery' && yearSelect[yearSelect.selectedIndex].value === '2010s' && ratingSelect[ratingSelect.selectedIndex].value === '8.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('mystery') && movie.year >= 2010 && movie.year < 2020 && movie.ImdbRating >= 8
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'mystery' && yearSelect[yearSelect.selectedIndex].value === '2000s' && ratingSelect[ratingSelect.selectedIndex].value === '8.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('mystery') && movie.year >= 2000 && movie.year < 2010 && movie.ImdbRating >= 8
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'mystery' && yearSelect[yearSelect.selectedIndex].value === '1990s' && ratingSelect[ratingSelect.selectedIndex].value === '8.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('mystery')  && movie.year < 2000 && movie.ImdbRating >= 8
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'mystery' && yearSelect[yearSelect.selectedIndex].value === '2020s' && ratingSelect[ratingSelect.selectedIndex].value === '7.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('mystery') && movie.year >= 2020 && movie.year < 2030 && movie.ImdbRating >= 7
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'mystery' && yearSelect[yearSelect.selectedIndex].value === '2010s' && ratingSelect[ratingSelect.selectedIndex].value === '7.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('mystery') && movie.year >= 2010 && movie.year < 2020 && movie.ImdbRating >= 7
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'mystery' && yearSelect[yearSelect.selectedIndex].value === '2000s' && ratingSelect[ratingSelect.selectedIndex].value === '7.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('mystery') && movie.year >= 2000 && movie.year < 2010 && movie.ImdbRating >= 7
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'mystery' && yearSelect[yearSelect.selectedIndex].value === '1990s' && ratingSelect[ratingSelect.selectedIndex].value === '7.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('mystery') && movie.year >= 1990 && movie.year < 2000 && movie.ImdbRating >= 7
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'mystery' && yearSelect[yearSelect.selectedIndex].value === '2020s' && ratingSelect[ratingSelect.selectedIndex].value === '6.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('mystery') && movie.year >= 2020 && movie.year < 2030 && movie.ImdbRating >= 6
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'mystery' && yearSelect[yearSelect.selectedIndex].value === '2010s' && ratingSelect[ratingSelect.selectedIndex].value === '6.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('mystery') && movie.year >= 2010 && movie.year < 2020 && movie.ImdbRating >= 6
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'mystery' && yearSelect[yearSelect.selectedIndex].value === '2000s' && ratingSelect[ratingSelect.selectedIndex].value === '6.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('mystery') && movie.year >= 2000 && movie.year < 2010 && movie.ImdbRating >= 6
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'mystery' && yearSelect[yearSelect.selectedIndex].value === '1990s' && ratingSelect[ratingSelect.selectedIndex].value === '6.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('mystery') && movie.year >= 1990 && movie.year < 2000 && movie.ImdbRating >= 6
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     // COMEDY
     if (genreSelect[genreSelect.selectedIndex].value === 'comedy' && yearSelect[yearSelect.selectedIndex].value === '2020s' && ratingSelect[ratingSelect.selectedIndex].value === '8.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('comedy') && movie.year >= 2020 && movie.year < 2030 && movie.ImdbRating >= 8
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     } 
     if (genreSelect[genreSelect.selectedIndex].value === 'comedy' && yearSelect[yearSelect.selectedIndex].value === '2010s' && ratingSelect[ratingSelect.selectedIndex].value === '8.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('comedy') && movie.year >= 2010 && movie.year < 2020 && movie.ImdbRating >= 8
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'comedy' && yearSelect[yearSelect.selectedIndex].value === '2000s' && ratingSelect[ratingSelect.selectedIndex].value === '8.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('comedy') && movie.year >= 2000 && movie.year < 2010 && movie.ImdbRating >= 8
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'comedy' && yearSelect[yearSelect.selectedIndex].value === '1990s' && ratingSelect[ratingSelect.selectedIndex].value === '8.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('comedy')  && movie.year < 2000 && movie.ImdbRating >= 8
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'comedy' && yearSelect[yearSelect.selectedIndex].value === '2020s' && ratingSelect[ratingSelect.selectedIndex].value === '7.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('comedy') && movie.year >= 2020 && movie.year < 2030 && movie.ImdbRating >= 7
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'comedy' && yearSelect[yearSelect.selectedIndex].value === '2010s' && ratingSelect[ratingSelect.selectedIndex].value === '7.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('comedy') && movie.year >= 2010 && movie.year < 2020 && movie.ImdbRating >= 7
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'comedy' && yearSelect[yearSelect.selectedIndex].value === '2000s' && ratingSelect[ratingSelect.selectedIndex].value === '7.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('comedy') && movie.year >= 2000 && movie.year < 2010 && movie.ImdbRating >= 7
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'comedy' && yearSelect[yearSelect.selectedIndex].value === '1990s' && ratingSelect[ratingSelect.selectedIndex].value === '7.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('comedy') && movie.year >= 1990 && movie.year < 2000 && movie.ImdbRating >= 7
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'comedy' && yearSelect[yearSelect.selectedIndex].value === '2020s' && ratingSelect[ratingSelect.selectedIndex].value === '6.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('comedy') && movie.year >= 2020 && movie.year < 2030 && movie.ImdbRating >= 6
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'comedy' && yearSelect[yearSelect.selectedIndex].value === '2010s' && ratingSelect[ratingSelect.selectedIndex].value === '6.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('comedy') && movie.year >= 2010 && movie.year < 2020 && movie.ImdbRating >= 6
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'comedy' && yearSelect[yearSelect.selectedIndex].value === '2000s' && ratingSelect[ratingSelect.selectedIndex].value === '6.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('comedy') && movie.year >= 2000 && movie.year < 2010 && movie.ImdbRating >= 6
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'comedy' && yearSelect[yearSelect.selectedIndex].value === '1990s' && ratingSelect[ratingSelect.selectedIndex].value === '6.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('comedy') && movie.year >= 1990 && movie.year < 2000 && movie.ImdbRating >= 6
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     // ACTION
     if (genreSelect[genreSelect.selectedIndex].value === 'action' && yearSelect[yearSelect.selectedIndex].value === '2020s' && ratingSelect[ratingSelect.selectedIndex].value === '8.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('action') && movie.year >= 2020 && movie.year < 2030 && movie.ImdbRating >= 8
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     } 
     if (genreSelect[genreSelect.selectedIndex].value === 'action' && yearSelect[yearSelect.selectedIndex].value === '2010s' && ratingSelect[ratingSelect.selectedIndex].value === '8.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('action') && movie.year >= 2010 && movie.year < 2020 && movie.ImdbRating >= 8
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'action' && yearSelect[yearSelect.selectedIndex].value === '2000s' && ratingSelect[ratingSelect.selectedIndex].value === '8.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('action') && movie.year >= 2000 && movie.year < 2010 && movie.ImdbRating >= 8
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'action' && yearSelect[yearSelect.selectedIndex].value === '1990s' && ratingSelect[ratingSelect.selectedIndex].value === '8.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('action')  && movie.year < 2000 && movie.ImdbRating >= 8
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'action' && yearSelect[yearSelect.selectedIndex].value === '2020s' && ratingSelect[ratingSelect.selectedIndex].value === '7.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('action') && movie.year >= 2020 && movie.year < 2030 && movie.ImdbRating >= 7
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'action' && yearSelect[yearSelect.selectedIndex].value === '2010s' && ratingSelect[ratingSelect.selectedIndex].value === '7.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('action') && movie.year >= 2010 && movie.year < 2020 && movie.ImdbRating >= 7
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'action' && yearSelect[yearSelect.selectedIndex].value === '2000s' && ratingSelect[ratingSelect.selectedIndex].value === '7.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('action') && movie.year >= 2000 && movie.year < 2010 && movie.ImdbRating >= 7
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'action' && yearSelect[yearSelect.selectedIndex].value === '1990s' && ratingSelect[ratingSelect.selectedIndex].value === '7.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('action') && movie.year >= 1990 && movie.year < 2000 && movie.ImdbRating >= 7
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'action' && yearSelect[yearSelect.selectedIndex].value === '2020s' && ratingSelect[ratingSelect.selectedIndex].value === '6.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('action') && movie.year >= 2020 && movie.year < 2030 && movie.ImdbRating >= 6
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'action' && yearSelect[yearSelect.selectedIndex].value === '2010s' && ratingSelect[ratingSelect.selectedIndex].value === '6.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('action') && movie.year >= 2010 && movie.year < 2020 && movie.ImdbRating >= 6
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'action' && yearSelect[yearSelect.selectedIndex].value === '2000s' && ratingSelect[ratingSelect.selectedIndex].value === '6.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('action') && movie.year >= 2000 && movie.year < 2010 && movie.ImdbRating >= 6
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'action' && yearSelect[yearSelect.selectedIndex].value === '1990s' && ratingSelect[ratingSelect.selectedIndex].value === '6.0') {
 
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('action') && movie.year >= 1990 && movie.year < 2000 && movie.ImdbRating >= 6
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     // SCI-FI
     if (genreSelect[genreSelect.selectedIndex].value === 'sci-fi' && yearSelect[yearSelect.selectedIndex].value === '2020s' && ratingSelect[ratingSelect.selectedIndex].value === '8.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('sci-fi') && movie.year >= 2020 && movie.year < 2030 && movie.ImdbRating >= 8
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     } 
     if (genreSelect[genreSelect.selectedIndex].value === 'sci-fi' && yearSelect[yearSelect.selectedIndex].value === '2010s' && ratingSelect[ratingSelect.selectedIndex].value === '8.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('sci-fi') && movie.year >= 2010 && movie.year < 2020 && movie.ImdbRating >= 8
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'sci-fi' && yearSelect[yearSelect.selectedIndex].value === '2000s' && ratingSelect[ratingSelect.selectedIndex].value === '8.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('sci-fi') && movie.year >= 2000 && movie.year < 2010 && movie.ImdbRating >= 8
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'sci-fi' && yearSelect[yearSelect.selectedIndex].value === '1990s' && ratingSelect[ratingSelect.selectedIndex].value === '8.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('sci-fi')  && movie.year < 2000 && movie.ImdbRating >= 8
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'sci-fi' && yearSelect[yearSelect.selectedIndex].value === '2020s' && ratingSelect[ratingSelect.selectedIndex].value === '7.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('sci-fi') && movie.year >= 2020 && movie.year < 2030 && movie.ImdbRating >= 7
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'sci-fi' && yearSelect[yearSelect.selectedIndex].value === '2010s' && ratingSelect[ratingSelect.selectedIndex].value === '7.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('sci-fi') && movie.year >= 2010 && movie.year < 2020 && movie.ImdbRating >= 7
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'sci-fi' && yearSelect[yearSelect.selectedIndex].value === '2000s' && ratingSelect[ratingSelect.selectedIndex].value === '7.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('sci-fi') && movie.year >= 2000 && movie.year < 2010 && movie.ImdbRating >= 7
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'sci-fi' && yearSelect[yearSelect.selectedIndex].value === '1990s' && ratingSelect[ratingSelect.selectedIndex].value === '7.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('sci-fi') && movie.year >= 1990 && movie.year < 2000 && movie.ImdbRating >= 7
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'sci-fi' && yearSelect[yearSelect.selectedIndex].value === '2020s' && ratingSelect[ratingSelect.selectedIndex].value === '6.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('sci-fi') && movie.year >= 2020 && movie.year < 2030 && movie.ImdbRating >= 6
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'sci-fi' && yearSelect[yearSelect.selectedIndex].value === '2010s' && ratingSelect[ratingSelect.selectedIndex].value === '6.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('sci-fi') && movie.year >= 2010 && movie.year < 2020 && movie.ImdbRating >= 6
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'sci-fi' && yearSelect[yearSelect.selectedIndex].value === '2000s' && ratingSelect[ratingSelect.selectedIndex].value === '6.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('sci-fi') && movie.year >= 2000 && movie.year < 2010 && movie.ImdbRating >= 6
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'sci-fi' && yearSelect[yearSelect.selectedIndex].value === '1990s' && ratingSelect[ratingSelect.selectedIndex].value === '6.0') {
 
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('sci-fi') && movie.year >= 1990 && movie.year < 2000 && movie.ImdbRating >= 6
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     // ROMANCE
     if (genreSelect[genreSelect.selectedIndex].value === 'romance' && yearSelect[yearSelect.selectedIndex].value === '2020s' && ratingSelect[ratingSelect.selectedIndex].value === '8.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('romance') && movie.year >= 2020 && movie.year < 2030 && movie.ImdbRating >= 8
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     } 
     if (genreSelect[genreSelect.selectedIndex].value === 'romance' && yearSelect[yearSelect.selectedIndex].value === '2010s' && ratingSelect[ratingSelect.selectedIndex].value === '8.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('romance') && movie.year >= 2010 && movie.year < 2020 && movie.ImdbRating >= 8
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'romance' && yearSelect[yearSelect.selectedIndex].value === '2000s' && ratingSelect[ratingSelect.selectedIndex].value === '8.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('romance') && movie.year >= 2000 && movie.year < 2010 && movie.ImdbRating >= 8
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'romance' && yearSelect[yearSelect.selectedIndex].value === '1990s' && ratingSelect[ratingSelect.selectedIndex].value === '8.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('romance')  && movie.year < 2000 && movie.ImdbRating >= 8
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'romance' && yearSelect[yearSelect.selectedIndex].value === '2020s' && ratingSelect[ratingSelect.selectedIndex].value === '7.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('romance') && movie.year >= 2020 && movie.year < 2030 && movie.ImdbRating >= 7
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'romance' && yearSelect[yearSelect.selectedIndex].value === '2010s' && ratingSelect[ratingSelect.selectedIndex].value === '7.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('romance') && movie.year >= 2010 && movie.year < 2020 && movie.ImdbRating >= 7
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'romance' && yearSelect[yearSelect.selectedIndex].value === '2000s' && ratingSelect[ratingSelect.selectedIndex].value === '7.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('romance') && movie.year >= 2000 && movie.year < 2010 && movie.ImdbRating >= 7
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'romance' && yearSelect[yearSelect.selectedIndex].value === '1990s' && ratingSelect[ratingSelect.selectedIndex].value === '7.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('romance') && movie.year >= 1990 && movie.year < 2000 && movie.ImdbRating >= 7
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'romance' && yearSelect[yearSelect.selectedIndex].value === '2020s' && ratingSelect[ratingSelect.selectedIndex].value === '6.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('romance') && movie.year >= 2020 && movie.year < 2030 && movie.ImdbRating >= 6
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'romance' && yearSelect[yearSelect.selectedIndex].value === '2010s' && ratingSelect[ratingSelect.selectedIndex].value === '6.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('romance') && movie.year >= 2010 && movie.year < 2020 && movie.ImdbRating >= 6
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'romance' && yearSelect[yearSelect.selectedIndex].value === '2000s' && ratingSelect[ratingSelect.selectedIndex].value === '6.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('romance') && movie.year >= 2000 && movie.year < 2010 && movie.ImdbRating >= 6
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'romance' && yearSelect[yearSelect.selectedIndex].value === '1990s' && ratingSelect[ratingSelect.selectedIndex].value === '6.0') {
 
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('romance') && movie.year >= 1990 && movie.year < 2000 && movie.ImdbRating >= 6
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     // SCI-FI
     if (genreSelect[genreSelect.selectedIndex].value === 'sci-fi' && yearSelect[yearSelect.selectedIndex].value === '2020s' && ratingSelect[ratingSelect.selectedIndex].value === '8.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('sci-fi') && movie.year >= 2020 && movie.year < 2030 && movie.ImdbRating >= 8
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     } 
     if (genreSelect[genreSelect.selectedIndex].value === 'sci-fi' && yearSelect[yearSelect.selectedIndex].value === '2010s' && ratingSelect[ratingSelect.selectedIndex].value === '8.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('sci-fi') && movie.year >= 2010 && movie.year < 2020 && movie.ImdbRating >= 8
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'sci-fi' && yearSelect[yearSelect.selectedIndex].value === '2000s' && ratingSelect[ratingSelect.selectedIndex].value === '8.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('sci-fi') && movie.year >= 2000 && movie.year < 2010 && movie.ImdbRating >= 8
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'sci-fi' && yearSelect[yearSelect.selectedIndex].value === '1990s' && ratingSelect[ratingSelect.selectedIndex].value === '8.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('sci-fi')  && movie.year < 2000 && movie.ImdbRating >= 8
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'sci-fi' && yearSelect[yearSelect.selectedIndex].value === '2020s' && ratingSelect[ratingSelect.selectedIndex].value === '7.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('sci-fi') && movie.year >= 2020 && movie.year < 2030 && movie.ImdbRating >= 7
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'sci-fi' && yearSelect[yearSelect.selectedIndex].value === '2010s' && ratingSelect[ratingSelect.selectedIndex].value === '7.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('sci-fi') && movie.year >= 2010 && movie.year < 2020 && movie.ImdbRating >= 7
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'sci-fi' && yearSelect[yearSelect.selectedIndex].value === '2000s' && ratingSelect[ratingSelect.selectedIndex].value === '7.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('sci-fi') && movie.year >= 2000 && movie.year < 2010 && movie.ImdbRating >= 7
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'sci-fi' && yearSelect[yearSelect.selectedIndex].value === '1990s' && ratingSelect[ratingSelect.selectedIndex].value === '7.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('sci-fi') && movie.year >= 1990 && movie.year < 2000 && movie.ImdbRating >= 7
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'sci-fi' && yearSelect[yearSelect.selectedIndex].value === '2020s' && ratingSelect[ratingSelect.selectedIndex].value === '6.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('sci-fi') && movie.year >= 2020 && movie.year < 2030 && movie.ImdbRating >= 6
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'sci-fi' && yearSelect[yearSelect.selectedIndex].value === '2010s' && ratingSelect[ratingSelect.selectedIndex].value === '6.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('sci-fi') && movie.year >= 2010 && movie.year < 2020 && movie.ImdbRating >= 6
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'sci-fi' && yearSelect[yearSelect.selectedIndex].value === '2000s' && ratingSelect[ratingSelect.selectedIndex].value === '6.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('sci-fi') && movie.year >= 2000 && movie.year < 2010 && movie.ImdbRating >= 6
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'sci-fi' && yearSelect[yearSelect.selectedIndex].value === '1990s' && ratingSelect[ratingSelect.selectedIndex].value === '6.0') {
 
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('sci-fi') && movie.year >= 1990 && movie.year < 2000 && movie.ImdbRating >= 6
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
 
     // ANMATION
     if (genreSelect[genreSelect.selectedIndex].value === 'animation' && yearSelect[yearSelect.selectedIndex].value === '2020s' && ratingSelect[ratingSelect.selectedIndex].value === '8.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('animation') && movie.year >= 2020 && movie.year < 2030 && movie.ImdbRating >= 8
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     } 
     if (genreSelect[genreSelect.selectedIndex].value === 'animation' && yearSelect[yearSelect.selectedIndex].value === '2010s' && ratingSelect[ratingSelect.selectedIndex].value === '8.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('animation') && movie.year >= 2010 && movie.year < 2020 && movie.ImdbRating >= 8
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'animation' && yearSelect[yearSelect.selectedIndex].value === '2000s' && ratingSelect[ratingSelect.selectedIndex].value === '8.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('animation') && movie.year >= 2000 && movie.year < 2010 && movie.ImdbRating >= 8
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'animation' && yearSelect[yearSelect.selectedIndex].value === '1990s' && ratingSelect[ratingSelect.selectedIndex].value === '8.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('animation')  && movie.year < 2000 && movie.ImdbRating >= 8
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'animation' && yearSelect[yearSelect.selectedIndex].value === '2020s' && ratingSelect[ratingSelect.selectedIndex].value === '7.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('animation') && movie.year >= 2020 && movie.year < 2030 && movie.ImdbRating >= 7
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'animation' && yearSelect[yearSelect.selectedIndex].value === '2010s' && ratingSelect[ratingSelect.selectedIndex].value === '7.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('animation') && movie.year >= 2010 && movie.year < 2020 && movie.ImdbRating >= 7
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'animation' && yearSelect[yearSelect.selectedIndex].value === '2000s' && ratingSelect[ratingSelect.selectedIndex].value === '7.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('animation') && movie.year >= 2000 && movie.year < 2010 && movie.ImdbRating >= 7
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'animation' && yearSelect[yearSelect.selectedIndex].value === '1990s' && ratingSelect[ratingSelect.selectedIndex].value === '7.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('animation') && movie.year >= 1990 && movie.year < 2000 && movie.ImdbRating >= 7
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'animation' && yearSelect[yearSelect.selectedIndex].value === '2020s' && ratingSelect[ratingSelect.selectedIndex].value === '6.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('animation') && movie.year >= 2020 && movie.year < 2030 && movie.ImdbRating >= 6
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'animation' && yearSelect[yearSelect.selectedIndex].value === '2010s' && ratingSelect[ratingSelect.selectedIndex].value === '6.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('animation') && movie.year >= 2010 && movie.year < 2020 && movie.ImdbRating >= 6
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'animation' && yearSelect[yearSelect.selectedIndex].value === '2000s' && ratingSelect[ratingSelect.selectedIndex].value === '6.0') {
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('animation') && movie.year >= 2000 && movie.year < 2010 && movie.ImdbRating >= 6
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
     if (genreSelect[genreSelect.selectedIndex].value === 'animation' && yearSelect[yearSelect.selectedIndex].value === '1990s' && ratingSelect[ratingSelect.selectedIndex].value === '6.0') {
 
-        const result =   movies.filter(movie => {
+        result =   movies.filter(movie => {
             return movie.genre.includes('animation') && movie.year >= 1990 && movie.year < 2000 && movie.ImdbRating >= 6
         })
-        const randomNumber = Math.floor(Math.random()*result.length)
-        // Creating a modal
-        const modal = document.createElement('div')
-        document.body.appendChild(modal)
-        modal.classList.add('modal')
-        const modalDiv = document.createElement('div')
-        modal.appendChild(modalDiv)
-        modalDiv.classList.add('modal-div')
-        const modalDelete = document.createElement('p')
-        modalDiv.appendChild(modalDelete)
-        modalDelete.classList.add('modal-delete')
-        modalDelete.textContent = 'X'
-        const modalName = document.createElement('h1')
-        modalDiv.appendChild(modalName)
-        modalName.innerText = result[randomNumber].name
-        modalName.style.overflow = 'hidden'
-        const modalGenre = document.createElement('h3')
-        modalDiv.appendChild(modalGenre)
-        modalGenre.innerText = result[randomNumber].genre
-        modalGenre.style.overflow = 'hidden'
-        const modalYear = document.createElement('p')
-        modalDiv.appendChild(modalYear)
-        modalYear.innerText = result[randomNumber].year
-        modalYear.style.overflow = 'hidden'
-        const modalRating = document.createElement('p')
-        modalDiv.appendChild(modalRating)
-        modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
-        const modalImage = document.createElement('img')
-        modalDiv.appendChild(modalImage)
-        modalImage.src = result[randomNumber].image
-        modalImage.classList.add('modal-image')
-        const modalInfo = document.createElement('p')
-        modalDiv.appendChild(modalInfo)
-        modalInfo.innerText = result[randomNumber].info
-        modalInfo.classList.add('modal-info')
-        modalDelete.addEventListener('click', (e)=> {
-            document.body.removeChild(modal)
-        })
-        
-        // end of modal
+        createModal()
     }
-
     
-
+    
+    
 }
 
 selectButton.addEventListener('click', selectOption)
 
 
-
+const createModal = () => {
+    const randomNumber = Math.floor(Math.random()*result.length)
+    // Creating a modal
+    const modal = document.createElement('div')
+    document.body.appendChild(modal)
+    modal.classList.add('modal')
+    const modalDiv = document.createElement('div')
+    modal.appendChild(modalDiv)
+    modalDiv.classList.add('modal-div')
+    const modalDelete = document.createElement('p')
+    modalDiv.appendChild(modalDelete)
+    modalDelete.classList.add('modal-delete')
+    modalDelete.textContent = 'X'
+    const modalName = document.createElement('h1')
+    modalDiv.appendChild(modalName)
+    modalName.innerText = result[randomNumber].name
+    modalName.style.overflow = 'hidden'
+    const modalGenre = document.createElement('h3')
+    modalDiv.appendChild(modalGenre)
+    modalGenre.innerText = result[randomNumber].genre
+    modalGenre.style.overflow = 'hidden'
+    const modalYear = document.createElement('p')
+    modalDiv.appendChild(modalYear)
+    modalYear.innerText = result[randomNumber].year
+    modalYear.style.overflow = 'hidden'
+    const modalRating = document.createElement('p')
+    modalDiv.appendChild(modalRating)
+    modalRating.innerText = `IMDB rating: ${result[randomNumber].ImdbRating}`
+    const modalImage = document.createElement('img')
+    modalDiv.appendChild(modalImage)
+    modalImage.src = result[randomNumber].image
+    modalImage.classList.add('modal-image')
+    const modalInfo = document.createElement('p')
+    modalDiv.appendChild(modalInfo)
+    modalInfo.innerText = result[randomNumber].info
+    modalInfo.classList.add('modal-info')
+    modalDelete.addEventListener('click', (e)=> {
+        document.body.removeChild(modal)
+    })
+    
+    // end of modal
+}
 
 
 
